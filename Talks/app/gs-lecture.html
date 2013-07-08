@@ -44,8 +44,8 @@
     <br>
     <!-- <div class="left" style="width:70%;">E</div> -->
     <div  style="">
-    <p><em>Simtools Workshop</em><br>
-    Paris, June  5<sup>th</sup> 2013</p>
+    <p><em>7<sup>th</sup> Complex Systems Summer School</em><br>
+    Le Havre, July 12<sup>th</sup> 2013</p>
     </div>
   </div>
   <div class="bottom"><img style="width:30%" src="images/gs-logo.png" alt="GS Logo"></div>
@@ -64,8 +64,8 @@
 <!-- ============ -->
 
   <!-- ==== SLIDE ==== -->
-  <div class="step" id ="Outlook">
-    <h2>Outlook</h2>  
+  <div class="step" id ="Outline">
+    <h2>Outline</h2>  
       <ol class="x2">
         <li>Dynamic Graphs</li>
         <li>GraphStream</li>
@@ -109,13 +109,13 @@
     <div class="text_center" style=""><img src="images/simpleGraph.png" style="width:50%;" /></div>
   </div>
   <div class="right" style="width:50%">
-    <p class="x2">Algorithms: Graphs Theory</p>
+    <p class="x2">Algorithms: Graph Theory</p>
     <ul>
       <li>graph colouring problems</li>
       <li>routing problems</li>
       <li>flow problems</li>
       <li>covering problems</li>
-      <li>subgraphs problems</li>
+      <li>subgraph problems</li>
     </ul>
   </div>
 </div>
@@ -215,10 +215,10 @@
       <pre class="prettyprint lang-java">
   Graph g = new DefaultGraph("MyGraph");
   g.read("some-file.tlp");
-  g.getDegree();
+  int n = g.getNodeCount();
   g.display();</pre>
       <p>Based on an event model: Nodes and Edges are Added/Removed/Modified</p>
-      <p>Interaction with over tools</p>
+      <p>Interaction with other tools</p>
       <ul>
         <li>Offline: several import / export file formats</li>
         <li>Online: through the API or through a network connection</li>
@@ -265,7 +265,7 @@
       <h3>On the website</h3>
         <ul>
           <li><a href="http://graphstream-project.org">graphstream-project.org</a></li>
-          <li>official releases (v1.1) of gs-core, gs-algo, gs-ui</li>
+          <li>official releases (v1.2) of gs-core, gs-algo, gs-ui</li>
           <li>nightly-builds</li>
         </ul>
       <h3>On Github</h3>
@@ -276,7 +276,7 @@
       <h3>On Maven</h3>
         <pre class="prettyprint lang-xml">&lt;groupId&gt;org.graphstream&lt;/groupId&gt;
   &lt;artifactId&gt;gs-core&lt;/artifactId&gt;
-  &lt;version&gt;1.1&lt;/version&gt;</pre>        
+  &lt;version&gt;1.2&lt;/version&gt;</pre>        
 </div>
 
 
@@ -373,9 +373,9 @@
 Graph graph = new SingleGraph("Some Graph");	
 graph.display();
 FileSource source = new FileSourceDGS();
-source.addSink( graph );
+source.addSink(graph);
 source.begin("someFile.dgs");
-while( source.nextEvents() ){
+while(source.nextEvents()){
   // Do whatever between two events
 }
 source.end();</pre>
@@ -419,7 +419,7 @@ source.end();</pre>
 
   <div class="step" id="Pipeline4">
     <h2>Pipelining</h2>
-  	<p>Receive events from another some other process/thread/programme/machine</p>
+  	<p>Receive events from some other process/thread/programme/machine</p>
   	
   	<pre class="prettyprint lang-java">
 Graph g = new SingleGraph("RWP");
@@ -482,7 +482,7 @@ double w = e.getNumber("weight");</pre>
   <h2>Algorithms</h2>
   <h3>Searches</h3>
   <p>
-    random searches, shortest paths, spanning trees, <em>etc.</em>
+    random walks, shortest paths, spanning trees, <em>etc.</em>
   </p>
   <h3>Metrics</h3>
   <p>
@@ -505,8 +505,8 @@ import org.graphstream.algorithm.ConnectedComponents;
 ConnectedComponents cc = new ConnectedComponents();
 cc.init(graph);
 while(something) {
-  cc.getConnectedComponentsCount();
-  canDoSomethingWithGraph();
+  int ccCount = cc.getConnectedComponentsCount();
+  doSomethingWith(graph);
 }</pre>
   </div>
   
@@ -525,7 +525,7 @@ algorithm.init(graph);
 algorithm.setSource("0");
 while(something) {
   algorithm.compute();
-  canDoSomethingWithGraph();
+  doSomethingWith(graph);
 }</pre>
   </div>
 
@@ -769,6 +769,7 @@ while (true) {
 
 
    <!-- ==== SLIDE ==== -->
+<!--
    <div class="step" id="Slides_and_Material">
      <h2>Slides and Material</h2>
 <br><br><p>Get the Slides and Materials online:</p>
@@ -777,7 +778,7 @@ while (true) {
 <p>  <a href="http://github.com/graphstream/gs-talk-simtools">https://github.com/graphstream/gs-talk-simtools</a>
   </p>
   </div>
-  
+ --> 
 
 </div>
 
