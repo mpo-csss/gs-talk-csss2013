@@ -9,8 +9,10 @@ import org.graphstream.stream.netstream.NetStreamReceiver;
 import org.graphstream.stream.thread.ThreadProxyPipe;
 
 public class RWPViewer {
-	public static void main(String[] args) throws UnknownHostException, IOException, InterruptedException {
-		Graph g = new SingleGraph("RWP");
+	private Graph g;
+	
+	public RWPViewer() throws UnknownHostException, IOException, InterruptedException {
+		g = new SingleGraph("RWP");
 		NetStreamReceiver rcv = new NetStreamReceiver("localhost", 2000);
 		ThreadProxyPipe pipe = rcv.getDefaultStream();
 		pipe.addSink(g);
@@ -19,5 +21,9 @@ public class RWPViewer {
 		while (true) {
 			pipe.blockingPump();
 		}
+	}
+	
+	public static void main(String[] args) throws UnknownHostException, IOException, InterruptedException {
+		new RWPViewer();
 	}
 }
