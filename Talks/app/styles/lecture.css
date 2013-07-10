@@ -116,7 +116,7 @@ li > pre {
   margin: 0;
 }
 h1 {
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif;*/
   font-style: italic;
   font-weight: 700;
   font-size: 250%;
