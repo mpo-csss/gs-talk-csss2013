@@ -22,7 +22,12 @@ public class TagGraph {
 		
 		System.out.printf("%10s%10s%10s%10s\n", "Boat", "Received", "Sent", "Balance");
 		for (Node node : graph) {
-			System.out.printf("%10s%10d%10d%10d\n", node.getId(), node.getInDegree(), node.getOutDegree(), node.getInDegree() - node.getOutDegree());
+			int balance = node.getInDegree() - node.getOutDegree();
+			if (balance > 0)
+				node.addAttribute("ui.class", "pos");
+			else if (balance < 0)
+				node.addAttribute("ui.class", "neg");
+			System.out.printf("%10s%10d%10d%10d\n", node.getId(), node.getInDegree(), node.getOutDegree(), balance);
 		}
 	}
 }

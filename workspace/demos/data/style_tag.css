@@ -14,8 +14,19 @@ node {
 	text-color: #FFF;
 }
 
+node.pos {
+	fill-color: blue;
+}
+
+node.neg {
+	fill-color: red;
+}
+
 edge {
-	fill-color: grey;
+	size: 2px;
+	arrow-shape: arrow; 
+	arrow-size: 20px, 4px;
+	fill-color: #555;
 	text-alignment: along;
 	text-visibility-mode: hidden;
 }
