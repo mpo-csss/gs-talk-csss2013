@@ -1,0 +1,47 @@
+DGS004
+"Tag exchange" 0 0
+an "1" ui.label="Boat1"
+an "2" ui.label="Boat2"
+an "3" ui.label="Boat3"
+an "4" ui.label="Boat4"
+an "5" ui.label="Boat5"
+an "6" ui.label="Boat6"
+an "7" ui.label="Boat7"
+
+ae "e01" "7" > "1" ui.label="telescope"
+ae "e02" "6" > "1" ui.label="more"
+ae "e03" "6" > "1" ui.label="luxury"
+ae "e04" "5" > "1" ui.label="about"
+
+ae "e05" "7" > "2" ui.label="telescope"
+ae "e06" "6" > "2" ui.label="more"
+ae "e07" "3" > "2" ui.label="dispensable"
+ae "e08" "6" > "2" ui.label="luxury"
+ae "e09" "6" > "2" ui.label="presence"
+
+ae "e10" "2" > "3" ui.label="elegance"
+ae "e11" "6" > "3" ui.label="presence"
+ae "e12" "4" > "3" ui.label="never"
+ae "e13" "4" > "3" ui.label="question"
+ae "e14" "4" > "3" ui.label="failure"
+ae "e15" "4" > "3" ui.label="method"
+ae "e16" "4" > "3" ui.label="astronomy"
+
+ae "e17" "6" > "4" ui.label="luxury"
+ae "e18" "7" > "4" ui.label="telescope"
+
+ae "e19" "1" > "5" ui.label="computer"
+ae "e20" "7" > "5" ui.label="telescope"
+
+ae "e21" "2" > "6" ui.label="science"
+ae "e22" "1" > "6" ui.label="factor"
+ae "e23" "5" > "6" ui.label="decide"
+ae "e24" "7" > "6" ui.label="telescope"
+ae "e25" "4" > "6" ui.label="failure"
+ae "e26" "2" > "6" ui.label="think"
+
+ae "e27" "2" > "7" ui.label="science"
+ae "e28" "1" > "7" ui.label="computer"
+ae "e29" "6" > "7" ui.label="luxury"
+ae "e30" "2" > "7" ui.label="elegance"
+ae "e31" "4" > "7" ui.label="failure"
