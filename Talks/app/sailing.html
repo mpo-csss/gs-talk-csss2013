@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <title>Sailing experience - Analysis</title>
+  <meta name="description" content="Technical presentation of the GraphStream Library">
+  <meta name="author" content="The GraphStream Team" />
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=yes" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
+
+
+  <!-- build:css styles/main.css -->
+  <link href="styles/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="styles/lecture.css" rel="stylesheet" type="text/css" />
+  <!-- endbuild -->     
+
+   <!-- build:js scripts/vendor/jquery.js -->
+   <script src="bower_components/jquery/jquery.js"></script>
+   <!-- endbuild -->     
+  
+</head>
+
+
+<body>
+  <div id="menu_handle" class="x2">»</div>
+  <div id="menu" class="x-2">
+    <ul></ul>
+  </div>
+
+  <div id="simple" data-template="mytemplate">
+
+
+<div id="home" class="step" >
+    
+    <h1>Sailing experience</h1>
+    <div class="text_right right clearfix">
+    <br>
+    <h2>Data analysis and exploration</h2>
+    <br>
+    <!-- <div class="left" style="width:70%;">E</div> -->
+    <div  style="">
+    <p><em>7<sup>th</sup> Complex Systems Summer School</em><br>
+    Le Havre, July 15<sup>th</sup> 2013</p>
+    </div>
+  </div>
+  <div class="bottom"><img style="width:40%" src="images/sailing_photo.jpg" alt="sailing picture"></div>
+  
+  
+    <!-- <pre class="prettyprint lang-shell">DGS0004
+ "GraphStream Team" 4 0 
+ an "Stefan Balev"
+ an "Antoine Dutot" 
+ an "Yoann Pigné"
+ an "Guilhelm Savin"</pre> -->
+  </div>
+
+
+<!-- ============ -->
+<!-- = OUTLOOCK = -->
+<!-- ============ -->
+
+  <!-- ==== SLIDE ==== -->
+  <div class="step" id ="Outline">
+    <h2>Outline</h2>  
+      <ol class="x2">
+      	<li>Data</li>
+      	<li>Simulation</li>
+      	<li>...</li>
+      	<li>bla bla</li>
+      </ol>
+      </div>
+
+
+<!-- ==== SLIDE ==== -->
+
+<div class="step" id="Data_Collection">
+	<h2>Data collection</h2>
+    <div class="text_center" style=""><img src="images/phones.jpg" style="width:30%;" /></div>
+    <ul class="x2">
+    	<li>15 Motorola Defy+ Android phones with A-GPS positioning</li>
+    	<li>2 phones on each boat + 1 phone on the motor boat</li>
+    	<li>Application "My Tracks" to collect GPS tracks</li>
+    	<li>All phones produced data ... except the one on the motor boat</li>
+    </ul>
+</div>
+
+<!-- ==== SLIDE ==== -->
+
+<div class="step" id="Raw data">
+	<h2>Raw Data</h2>
+	<p class="x2">Files in GPX format</p>
+	<pre class="prettyprint lang-xml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;gpx
+version="1.1"
+creator="Created by Google My Tracks on Android."
+xmlns="http://www.topografix.com/GPX/1/1" ...&gt;
+
+&lt;trk&gt;
+&lt;trkseg&gt;
+&lt;trkpt lat="49.492217" lon="0.094606"&gt;
+&lt;ele&gt;82&lt;/ele&gt;
+&lt;time&gt;2013-07-11T16:10:00.737Z&lt;/time&gt;
+&lt;/trkpt&gt;
+&lt;trkpt lat="49.492217" lon="0.094606"&gt;
+&lt;ele&gt;82&lt;/ele&gt;
+&lt;time&gt;2013-07-11T16:10:09.737Z&lt;/time&gt;
+&lt;/trkpt&gt;
+...
+&lt;/trkseg&gt;
+&lt;/trk&gt;
+&lt;/gpx&gt;
+	</pre>
+</div>
+
+<!-- ==== SLIDE ==== -->
+
+<div class="step" id="Data_Precision">
+	<h2>Data precision</h2>
+	<p>Show here the difference between two phones on the same boat...</p>
+</div>
+
+<!-- ==== SLIDE ==== -->
+
+<div class="step" id="Data_Processing">
+	<h2>Processing raw data</h2>
+	<p>Transformations, synchronization of traces etc.</p>
+</div>
+
+
+
+<!-- ==== SLIDE ==== -->
+
+<div class="step" id="">
+</div>
+
+
+
+<!-- build:js scripts/vendor/jmpress.js -->
+<script src="bower_components/jmpress/jmpress.js"></script>
+<!-- endbuild -->    
+
+<!-- build:js scripts/main.js -->
+<script type="text/javascript" src="scripts/prettify.js"></script>
+<script type="text/javascript" src="scripts/lang-css.js"></script>
+<script type="text/javascript" src="scripts/lecture.js"></script>
+<!-- endbuild -->   
+ 
+</body>
+</html>
