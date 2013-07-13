@@ -17,6 +17,7 @@ to setup
   read-pos
   ask boats [
     setxy next-x next-y
+    pen-down
   ]
   reset-ticks
 end
@@ -27,8 +28,9 @@ to go
   ]
   read-pos
   ask boats [
-    ;;facexy next-x next-y
-    setxy next-x next-y
+    if distancexy next-x next-y < 1 [ ;;data smoothing
+      setxy next-x next-y
+    ]
   ]
   tick
 end
@@ -59,7 +61,7 @@ GRAPHICS-WINDOW
 1
 0
 0
-1
+0
 1
 -17
 19
