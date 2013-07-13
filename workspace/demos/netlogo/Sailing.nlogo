@@ -7,19 +7,21 @@ boats-own [
 
 to setup
   ca
-  ;;file-open user-file
   file-close
+  ;;file-open user-file
   file-open "../data/tracks.txt"
-  create-boats 7 [
-    set label who + 1
-    set shape "boat 3"
-  ]
+  create-boats 7
   read-pos
   ask boats [
+    set label who + 1
+    set shape "boat 3"
     setxy next-x next-y
     pen-down
   ]
   reset-ticks
+  foreach n-values count boats [?] [
+    show ?
+  ]
 end
 
 to go
@@ -36,13 +38,11 @@ to go
 end
 
 to read-pos
-  let i 0
-  repeat 7 [
-    ask boat i [
-      set next-x file-read 
+  foreach n-values count boats boat [
+    ask ? [
+      set next-x file-read
       set next-y file-read
     ]
-    set i i + 1
   ]
 end
 @#$#@#$#@
