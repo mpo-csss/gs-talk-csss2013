@@ -11,7 +11,7 @@ to setup
   file-close
   file-open "../data/tracks.txt"
   create-boats 7 [
-    set label who
+    set label who + 1
     set shape "boat 3"
   ]
   read-pos
