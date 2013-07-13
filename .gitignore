@@ -1,5 +1,4 @@
 .DS_Store
 workspace/.metadata
-workspace/demos/netlogo/RWPFinal.nlogo
-workspace/demos/src/org/graphstream/demo/tutorial3/RWPViewerFinal.java
+workspace/demos/src/util/
 
