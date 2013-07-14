@@ -19,9 +19,6 @@ to setup
     pen-down
   ]
   reset-ticks
-  foreach n-values count boats [?] [
-    show ?
-  ]
 end
 
 to go
@@ -38,7 +35,7 @@ to go
 end
 
 to read-pos
-  foreach n-values count boats boat [
+  foreach sort boats [
     ask ? [
       set next-x file-read
       set next-y file-read
