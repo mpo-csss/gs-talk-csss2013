@@ -3,12 +3,14 @@ breed [boats boat]
 boats-own [
   next-x
   next-y
+  has-token?
 ]
 
 to setup
   ca
   file-close
-  ;;file-open user-file
+  ;; use this if you want a dialog for the track file
+  ;; file-open user-file
   file-open "../data/tracks.txt"
   create-boats 7
   read-pos
@@ -16,7 +18,13 @@ to setup
     set label who + 1
     set shape "boat 3"
     setxy next-x next-y
-    pen-down
+    set has-token? false
+    set color blue
+    ;; pen-down
+  ]
+  ask one-of boats [
+    set has-token? true
+    set color red
   ]
   reset-ticks
 end
@@ -27,9 +35,8 @@ to go
   ]
   read-pos
   ask boats [
-    if distancexy next-x next-y < 1 [ ;;data smoothing
       setxy next-x next-y
-    ]
+      transmit-token
   ]
   tick
 end
@@ -39,6 +46,18 @@ to read-pos
     ask ? [
       set next-x file-read
       set next-y file-read
+    ]
+  ]
+end
+
+to transmit-token ;; turtle procedure
+  if has-token? and random-float 100 < transmission-prob [
+    let partner one-of other boats in-radius (radius / 100)
+    if partner != nobody and [not has-token?] of partner [
+      ask partner [
+        set has-token? true
+        set color red
+      ]
     ]
   ]
 end
@@ -58,7 +77,7 @@ GRAPHICS-WINDOW
 1
 0
 0
-0
+1
 1
 -17
 19
@@ -71,10 +90,10 @@ ticks
 30.0
 
 BUTTON
-13
-14
-86
-47
+11
+15
+84
+48
 NIL
 setup
 NIL
@@ -103,6 +122,54 @@ NIL
 NIL
 NIL
 1
+
+SLIDER
+177
+15
+349
+48
+radius
+radius
+1
+100
+5
+1
+1
+m
+HORIZONTAL
+
+SLIDER
+364
+15
+568
+48
+transmission-prob
+transmission-prob
+0
+10
+10
+0.1
+1
+%
+HORIZONTAL
+
+PLOT
+776
+62
+976
+212
+Boats with token
+step
+boat count
+0.0
+10.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"default" 1.0 0 -16777216 true "" "plot count boats with [has-token?]"
 
 @#$#@#$#@
 ## WHAT IS IT?
