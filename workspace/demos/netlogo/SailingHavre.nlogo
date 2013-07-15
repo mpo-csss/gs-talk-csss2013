@@ -18,7 +18,7 @@ boats-own [
 to setup
   clear-all
   ;import-pcolors-rgb "LeHavre.jpg"                            ; loads image as patches  
-  import-drawing "../data/LeHavre.jpg"
+  ;import-drawing "../data/LeHavre.jpg"
   create-boats population
     [  
       set shape "boat 3"
@@ -39,8 +39,8 @@ to place-buoys
   set ydepart min-pycor + 30
   set xarrivee min-pxcor + 8
   set yarrivee max-pycor - 8
-  ask patch xdepart ydepart [set pcolor green]
-  ask patch xarrivee yarrivee [set pcolor red]
+;  ask patch xdepart ydepart [set pcolor green]
+;  ask patch xarrivee yarrivee [set pcolor red]
   create-buoys 1 [ setxy  xdepart ydepart set shape "circle" set size 2 set color green ] ; only to see on the map
   create-buoys 1 [ setxy  xarrivee yarrivee set shape "circle" set size 2 set color red]
 end  
@@ -71,7 +71,7 @@ to go
     [ 
       ask boats with [start? and not arrival?] [
         go-where-collision-avoidance xarrivee yarrivee
-        if pcolor = red 
+        if any? buoys-here with [color = red]
         [set arrival? true
           set rankRed lput who rankRed
           output-print "Red buoy " 
@@ -80,7 +80,7 @@ to go
       ]
       ask boats with [start? and arrival?] [
         go-where-collision-avoidance xdepart ydepart
-        if pcolor = green
+        if any? buoys-here with [color = green]
         [
           set ranking lput who ranking
           die ]
@@ -88,7 +88,8 @@ to go
       ask boats with [not start?]
       [
         go-where-collision-avoidance xdepart ydepart
-        if pcolor = green [set start? true
+        if any? buoys-here with [color = green]
+        [set start? true
           set rankGreen lput who rankGreen
           output-print "Green buoy" 
           output-print who          
@@ -99,9 +100,9 @@ to go
       ask boats [ go-where-collision-avoidance xdepart ydepart ]
     ]
     if not any? boats [
-      output-print "Green : " output-print rankGreen
-      output-print "Red : " output-print rankRed 
-      output-print "ranking : " output-print ranking stop]      
+      output-print (word "Green : " rankGreen)
+      output-print (word "Red : " rankRed) 
+      output-print (word "Ranking : " ranking) stop]      
   ]
   tick
 end
@@ -176,7 +177,7 @@ population
 population
 1.0
 30
-12
+26
 1.0
 1
 NIL
@@ -267,7 +268,7 @@ boat-radius-angle
 boat-radius-angle
 1
 90
-9
+27
 1
 1
 NIL
@@ -293,7 +294,7 @@ OUTPUT
 429
 240
 784
-12
+10
 
 SWITCH
 109
