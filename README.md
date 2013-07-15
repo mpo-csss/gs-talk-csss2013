@@ -17,4 +17,4 @@ The ```Talks``` folder contains the sources of the slides.
 
 ### License
 
-See LICENSE file in respective subfolders ```Talks``` and ```Demos```.
+See LICENSE file in respective subfolders ```Talks``` and ```Workspace```.
