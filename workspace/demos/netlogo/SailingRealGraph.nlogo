@@ -17,7 +17,6 @@ to setup-sender
   gs:add-attribute "snd" "ui.antialias" true
 end
 
-
 to setup
   setup-sender
   ca
@@ -78,11 +77,11 @@ end
 GRAPHICS-WINDOW
 11
 60
-761
-611
--1
--1
-20.0
+896
+466
+17
+7
+25.0
 1
 10
 1
@@ -90,12 +89,12 @@ GRAPHICS-WINDOW
 1
 0
 0
-1
+0
 1
 -17
-19
--8
 17
+-7
+7
 0
 0
 1
@@ -103,10 +102,10 @@ ticks
 30.0
 
 BUTTON
-11
-15
-84
-48
+13
+14
+86
+47
 NIL
 setup
 NIL
@@ -121,9 +120,9 @@ NIL
 
 BUTTON
 98
-15
+14
 161
-48
+47
 NIL
 go
 T
@@ -137,15 +136,15 @@ NIL
 1
 
 SLIDER
-177
-15
-349
-48
+175
+14
+347
+47
 radius
 radius
-10
+1
 100
-10
+40
 1
 1
 m

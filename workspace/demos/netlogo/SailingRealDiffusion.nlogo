@@ -51,7 +51,7 @@ to read-pos
 end
 
 to transmit-token ;; turtle procedure
-  if has-token? and random-float 100 < transmission-prob [
+  if has-token? and random-float 1.0 < transmission-prob [
     let partner one-of other boats in-radius (radius / 100)
     if partner != nobody and [not has-token?] of partner [
       ask partner [
@@ -63,13 +63,13 @@ to transmit-token ;; turtle procedure
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-11
-60
-761
-611
--1
--1
-20.0
+9
+82
+894
+488
+17
+7
+25.0
 1
 10
 1
@@ -77,12 +77,12 @@ GRAPHICS-WINDOW
 1
 0
 0
-1
+0
 1
 -17
-19
--8
 17
+-7
+7
 0
 0
 1
@@ -90,10 +90,10 @@ ticks
 30.0
 
 BUTTON
-11
-15
-84
-48
+13
+14
+86
+47
 NIL
 setup
 NIL
@@ -108,9 +108,9 @@ NIL
 
 BUTTON
 98
-15
+14
 161
-48
+47
 NIL
 go
 T
@@ -124,43 +124,39 @@ NIL
 1
 
 SLIDER
-177
-15
-349
-48
+175
+14
+347
+47
 radius
 radius
 1
 100
-5
+40
 1
 1
 m
 HORIZONTAL
 
-SLIDER
-364
-15
-568
-48
+INPUTBOX
+357
+14
+518
+74
 transmission-prob
-transmission-prob
-0
-10
-10
-0.1
+0.0010
 1
-%
-HORIZONTAL
+0
+Number
 
 PLOT
-776
-62
-976
-212
+14
+505
+214
+655
 Boats with token
-step
-boat count
+steps
+NIL
 0.0
 10.0
 0.0
